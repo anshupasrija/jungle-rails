@@ -3,10 +3,46 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
-
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-  </div>
+  <h4>Thank you for your order!</h4>
+  <p> Copy of this order sent to your email, <%= @order.email %> </p> 
+</div>
+
+  <div class="panel panel-default items">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2">Product</th>    
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @order.line_items.each do |entry| %>
+    <td colspan = "2">
+    <img src="<%= entry.product.image %>" >
+    <h4><%= entry.product.name %></h4>
+    <p><%= entry.product.description %></p>
+   </td>
+   <td><%= entry.quantity %></td>
+   <td><%= entry.total_price %></td>
+   <%  end  %> 
+     </tbody>
+     <tfoot>
+       <tr>
+         <th colspan="3">
+           TOTAL:
+         </th>
+         <th>
+         <%= @order.total %>
+         </th>
+       </tr>
+     </tfoot>
+   </table>
+ </div>
+
+ 
+  
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
