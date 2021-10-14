@@ -39,7 +39,8 @@ class OrdersController < ApplicationController
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id, # returned by stripe
+      stripe_charge_id: stripe_charge.id,
+      total: 0 # returned by stripe
     )
 
     enhanced_cart.each do |entry|
@@ -50,7 +51,9 @@ class OrdersController < ApplicationController
         quantity: quantity,
         item_price: product.price,
         total_price: product.price * quantity
+
       )
+      order.total += product.price * quantity
     end
     order.save!
     order
