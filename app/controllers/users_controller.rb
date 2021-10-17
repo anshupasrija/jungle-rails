@@ -1,24 +1,25 @@
+
 class UsersController < ApplicationController
+
   def new
   end
 
   def create
-    # user_params[:email] = user_params[:email].downcase.strip
-    @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to '/'
-    else
-      redirect_to '/signup'
-    end
-  end
-  
-  private
+    user = User.new(user_params)  
+    raise `#{user.inspect}`
+      if user.save     
+        session[:user_id] = user.id
+        redirect_to '/'
+      else
+        redirect_to '/signup'
+      end   
 
-  def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
   end
-  
+
+  private
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 
 end
 
