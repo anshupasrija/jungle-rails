@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   describe 'Validations' do
     # validation tests/examples here
-    subject {Product.new(name: "Alex",price_cents: 20 , quantity: 10 , category: @category)}
+    subject {Product.new(name: "Alex",price_cents: 2011, quantity: 10 , category: @category)}
     before do  
       @category = Category.create(name: "abc")
       subject.save
