@@ -127,7 +127,7 @@ RSpec.describe User, type: :model do
       user.save
 
       user = User.authenticate_with_credentials('test@test.com', 'pass')
-      expect(user).to be(nil)
+      expect(user).to be(nil)     
     end
 
     it 'should pass even with spaces present in email' do

@@ -20,7 +20,7 @@
     <tbody>
   <% @order.line_items.each do |entry| %>
     <td colspan = "2">
-    <img src="<%= entry.product.image %>" >
+    <img src="<%= entry.product.image.tiny %>" >
     <h4><%= entry.product.name %></h4>
     <p><%= entry.product.description %></p>
    </td>

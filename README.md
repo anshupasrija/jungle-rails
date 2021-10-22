@@ -1,13 +1,15 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 that allows users to shop and place orders from various categories. Admin users have the ability to add and remove products and categories.
 
-## Additional Steps for Apple M1 Machines
-
-1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
-1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
-2. Remove Gemfile.lock
-3. Replace Gemfile with version provided [here](https://gist.githubusercontent.com/FrancisBourgouin/831795ae12c4704687a0c2496d91a727/raw/ce8e2104f725f43e56650d404169c7b11c33a5c5/Gemfile)
+## Captures
+### Home
+![Home](./app/assets/images/home.png)
+![Admin](./app/assets/images/adminproduct.png)
+![AdminNew](./app/assets/images/adminnewproduct.png)
+![NewCategory](./app/assets/images/newcategory.png)
+![Signup](./app/assets/images/signup.png)
+![cart](./app/assets/images/cart.png)
 
 ## Setup
 
